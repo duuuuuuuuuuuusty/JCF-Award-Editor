@@ -1,6 +1,8 @@
 # JCF Award Editor
 For JC Ink services
 
+Version 1.0
+
 ## Install
 Upload file as new webpage. Use script only on JC Ink's domain name, eg: myforum.jcink.com
 
