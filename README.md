@@ -30,6 +30,8 @@ The _replace_ functions work by exact case and exact match. They do not do parti
   This error commonly results from one of two cases:
     1. You are using the script from a custom domain, and not the X.jcink.com URL
     2. You have typed your password incorrectly
+    
+    
 2. 'Clicking the _Build Awards Table_ button has no effect'
 
   This error commonly results after editing the webpage that the script is hosted on. The script itself relies on a set of un-parsed characters to properly tabulate the data. Line 366 is parsed by the browser when the webpage editor is loaded, and the parsed characters are saved as part of the script. Line 366 should appear as:
