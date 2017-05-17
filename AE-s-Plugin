@@ -1,0 +1,182 @@
+<style>
+   #curtain,
+   #mass {
+       border: 2px dashed #f3f3f3;
+       width: 906px;
+   }
+   
+   table {
+       padding: 0;
+       border-collapse: collapse;
+       border-spacing: 0;
+   }
+   
+   tr,
+   th,
+   td {
+       border-collapse: collapse;
+       padding: 0;
+       border-spacing: 0;
+       font-family: Century Gothic, Verdana;
+       font-weight: 300;
+   }
+   
+   th {
+       border-left: 1px solid #cacaca;
+       border-right: 1px solid #cacaca;
+   }
+   
+   input {
+       border: none;
+       border-spacing: 0;
+   }
+   
+   #mass tr:nth-of-type(2n+1) input {
+       background: #ffffff none repeat scroll 0 0;
+   }
+   
+   #mass tr:nth-of-type(2n) input {
+       background: #e2ffff none repeat scroll 0 0;
+   }
+   
+   tr.toupload input {
+       background: #fbf6b3 none repeat scroll 0 0 !important;
+   }
+   
+   tr.toremove input {
+       background-color: rgba(256, 36, 21, .5)!important;
+   }
+   
+   .rmicon {
+       color: rgba(256, 36, 21, .8);
+   }
+   
+   .rmrow,
+   .controls {
+       cursor: pointer;
+   }
+   
+   .removed {
+       opacity: .2;
+       pointer-events: none!important;
+   }
+   
+   tr {
+       border-collapse: collapse;
+       display: table-row-group;
+       margin-left: 1px;
+       padding: 0 !important;
+   }
+   
+   .cell1 {
+       text-align: center;
+       width: 30px;
+   }
+   
+   .cell3 {
+       width: 170px;
+   }
+   
+   .cell5 {
+       width: 100px;
+   }
+   
+   .cell6 {
+       width: 264px;
+   }
+   
+   .cell7 {
+       width: 66px;
+   }
+   
+   #pt_se,
+   #acpid,
+   #result,
+   #sortphrase,
+   #sortgo,
+   #clearsort,
+   #rmsel,
+   #swapandgo,
+   #findme,
+   #replaceme {
+       border: 1px solid #cacaca;
+       background: initial!important;
+       color: #000;
+   }
+   
+   #logusn,
+   #logpw,
+   #logbtn {
+       background: #f3f3f3;
+       margin: 2px;
+       color: #000;
+   }
+   
+   select.cell7[default=undefined] {
+       display: none;
+   }
+   
+   .controls {
+       display: table-cell;
+       font-size: 16px;
+       position: absolute;
+       margin-top: -2px;
+   }
+   
+   .uploadcan {
+       margin-left: 14px;
+   }
+</style>
+<div id="curtain">
+   <div id="login">
+       <input type="text" id="logusn" placeholder="Username...">
+       <input type="password" id="logpw" placeholder="Password...">
+       <input type="button" id="logbtn" value="Login">
+       <input type="text" id="acpid" placeholder="No session found" autocomplete="off">
+       <input type="button" id="getdata" value="Build Awards Table" style="display:none;">
+   </div>
+   <table id="mass">
+       <tr>
+           <th>#</th>
+           <th>Awarded To</th>
+           <th>Award Name</th>
+           <th>Award Image</th>
+           <th>Given By</th>
+           <th>Award Description</th>
+           <th>Display?</th>
+       </tr>
+       <tr>
+           <td colspan=4>
+               <input type="button" id="pt_se" value="Submit Edits">
+               <input id="result" placeholder="Console" readonly type="text" style="font-style: italic;font-size:11px;padding:3px 10px;width:288px;" autocomplete="off">
+           </td>
+           <td align='right' colspan=3>
+               <select id="sortmenu">
+     <option value='2'>By Username..</option>
+     <option value='3'>By Award Name..</option>
+    </select>
+               <input type="text" id="sortphrase" placeholder="Enter search phrase.." autocomplete="off">
+               <input type="button" id="sortgo" value="Search">
+               <input type="button" id="clearsort" value="⎌" alt="Reset search parameters">
+           </td>
+       </tr>
+       <tr>
+           <td colspan=2>
+               <input type='button' id='rmsel' value='Delete Selected'>
+           </td>
+           <td align='right' colspan=5>
+               Replace <select id='replacemenu'>
+     <option value='3'>By Award Name..</option>
+     <option value='4'>By Image..</option>
+     <option value='5'>By 'Given By'..</option>
+     <option value='6'>By Description..</option>
+    </select>
+               <input type='text' id='findme' placeholder='Replace this phrase..' autocomplete="off">
+               <input type='text' id='replaceme' placeholder='.. With this phrase' autocomplete="off">
+               <input type='button' id='swapandgo' value='Mark for Upload'>
+           </td>
+       </tr>
+   </table>
+</div>
+<!-- Make sure JQuery is included in the head of the page, or at least here -->
+<script src="https://rawgit.com/duuuuuuuuuuuusty/JCF-Award-Editor/master/AE-sep.js"></script>
