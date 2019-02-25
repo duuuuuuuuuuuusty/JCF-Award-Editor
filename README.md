@@ -1,3 +1,5 @@
+##Outdated, do not use. See https://github.com/duuuuuuuuuuuusty/AE-MA-T for new utility
+
 # JCF Award Editor
 For JC Ink services
 
